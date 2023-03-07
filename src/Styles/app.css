@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;500&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    display: block;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: #dedee0;
+}
+
+.parent {
+    width: min-content;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.cell {
+    position: relative;
+
+    height: 15vmin;
+    width: 15vmin;
+    border-radius: 10%;
+    font-size: 1.8vmin;
+    user-select: none;
+
+    background: #1c1c1e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 2vh;
+    box-sizing: border-box;
+}
+
+.cell.unfocused::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    position: absolute;
+    background: #2c2c2f0a;
+    backdrop-filter: blur(2px);
+    transition: .2s all;
+}
+
+.cell-empty {
+    visibility: hidden;
+}
+
+.date-badge {
+    box-sizing: border-box;
+    padding: .2em;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.3vmin;
+    width: 90%;
+
+    color: #ffffffa5;
+
+    border-top: 2px solid #262628;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes -drop {
+    0% {
+        opacity: 0;
+    }
+    100 % {
+        opacity: 1;
+    }
+}
